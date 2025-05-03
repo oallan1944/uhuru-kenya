@@ -8,24 +8,29 @@ import { womenLevelThree } from '../../../Data/Category/Level three/womenLevelTh
 import { electronicsLevelThree } from '../../../Data/Category/Level three/electronicsLevelThree'
 import { FurnitureLevelThree } from '../../../Data/Category/Level three/furnitureLevelThree'
 import { Box } from '@mui/material'
+import { fitnessLevelTwo } from '../../../Data/Category/Level two/fitnessLevelTwo'
+import { fitnessLevelThree } from '../../../Data/Category/Level three/fitnessLevelThree'
+import { useNavigate } from 'react-router-dom'
 
 
 const categoryTwo: { [key: string]: any[] } = {
     men: menLevelTwo,
     women: womenLevelTwo,
     electronics: electronicsLevelTwo,
-    home_furniture: furnitureLevelTwo
+    home_furniture: furnitureLevelTwo,
+    sports_fitness: fitnessLevelTwo
 
 }
 const categoryThree: { [key: string]: any[] } = {
     men: menLevelThree,
     women: womenLevelThree,
     electronics: electronicsLevelThree,
-    home_furniture: FurnitureLevelThree
+    home_furniture: FurnitureLevelThree,
+    sports_fitness: fitnessLevelThree
 }
 
 const CategorySheet = ({ selectedCategory, setShowSheet }: any) => {
-
+    const navigate = useNavigate()
     // filtering child category
     const childCategory = (category: any, parentCategoryId: any) => {
         return category.filter((child: any) => child.parentCategoryId === parentCategoryId)
@@ -49,7 +54,8 @@ const CategorySheet = ({ selectedCategory, setShowSheet }: any) => {
                                 {childCategory(categoryThree[selectedCategory], item.categoryId).map(
                                     (item: any) =>
                                         <div>
-                                            <li className='hover:text-primary-color cursor-pointer'>
+                                            <li onClick={() => navigate("/products/" + item.categoryId)}
+                                                className='hover:text-primary-color cursor-pointer'>
                                                 {item.name}
 
                                             </li>

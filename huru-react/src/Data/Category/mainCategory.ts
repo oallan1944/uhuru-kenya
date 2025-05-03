@@ -102,15 +102,88 @@ export const mainCategory = [
         name: "Home & Furniture",
         categoryId: "home_furniture",
         level: 1,
+        levelTwoCategory: [
+            {
+                "name": "Bed Linen & Furnishing",
+                "categoryId": "home_furniture_bed_linen_&_furnishing",
+                "parentCategoryId": "home_furniture",
+                "level": 2
+            },
+            {
+                "name": "Flooring",
+                "categoryId": "home_furniture_flooring",
+                "parentCategoryId": "home_furniture",
+                "level": 2
+            },
+            {
+                "name": "Bath",
+                "categoryId": "home_furniture_bath",
+                "parentCategoryId": "home_furniture",
+                "level": 2
+            },
+            {
+                "name": "Lamps & Lighting",
+                "categoryId": "home_furniture_lamps_and_lighting",
+                "parentCategoryId": "home_furniture",
+                "level": 2
+            },
+            {
+                "name": "Home Decor",
+                "categoryId": "home_furniture_home_decor",
+                "parentCategoryId": "home_furniture",
+                "level": 2
+            },
+
+
+        ]
     },
     {
         name: "Electronics",
         categoryId: "electronics",
-        level: 1
+        level: 1,
+        levelTwoCategory: [
+            {
+                "name": "Phones & Tablets",
+                "categoryId": "electronics_phones_and_tablets",
+                "parentCategoryId": "electronics",
+                "level": 2
+            },
+            {
+                "name": "Television & Video",
+                "categoryId": "electronics_television_and_video",
+                "parentCategoryId": "electronics",
+                "level": 2
+            },
+            {
+                "name": "Home Audio",
+                "categoryId": "electronics_home_audio",
+                "parentCategoryId": "electronics",
+                "level": 2
+            },
+            {
+                "name": "Computing",
+                "categoryId": "electronics_computing",
+                "parentCategoryId": "electronics",
+                "level": 2
+            },
+            {
+                "name": "Accessories & Supplies",
+                "categoryId": "electronics_accessories_and_supplies",
+                "parentCategoryId": "electronics",
+                "level": 2
+            },
+            {
+                "name": "Camera & Photo",
+                "categoryId": "electronics_camera_and_photo",
+                "parentCategoryId": "electronics",
+                "level": 2
+            },
+        ]
     },
     {
         name: "Sports & Fitness",
-        categoryId: "sprots_and_fitness",
-        level: 1
+        categoryId: "sprots_fitness",
+        level: 1,
+
     }
 ];

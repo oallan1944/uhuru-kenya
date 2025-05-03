@@ -6,12 +6,14 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { AddShoppingCart, FavoriteBorder, Storefront } from "@mui/icons-material";
 import CategorySheet from "./CategorySheet";
 import { mainCategory } from "../../../Data/Category/mainCategory";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
     const theme = useTheme();
     const isLarge = useMediaQuery(theme.breakpoints.up("lg"))
     const [selectedCategory, setSelectedCategory] = useState("men");
     const [showCategorySheet, setShowCategorySheet] = useState(false);
+    const navigate = useNavigate()
     return (
         <>
             <Box
@@ -23,7 +25,8 @@ const Navbar = () => {
                             {!isLarge && <IconButton>
                                 <MenuIcon />
                             </IconButton>}
-                            <h1 className="logo cursor-pointer text-lg md:text-2xl text-primary-color  ">
+                            <h1 onClick={() => navigate("/")}
+                                className="logo cursor-pointer text-lg md:text-2xl text-primary-color  ">
 
                                 Huru Market
                             </h1>
@@ -41,9 +44,6 @@ const Navbar = () => {
                                     className="mainCategory hover:text-primary-color
                             hover:border-b-2 h-[70px] px-4 border-primary-color
                             flex items-center "> {item.name} </li>)}
-
-
-
                         </ul>
                     </div>
                     <div className=" flex gap-1 lg:gap-6 items-center">
@@ -52,7 +52,8 @@ const Navbar = () => {
                         </IconButton>
 
                         {
-                            true ? <Button className="flex items-center gap-2">
+                            true ? <Button onClick={() => navigate("/account/orders")}
+                                className="flex items-center gap-2">
                                 <Avatar sx={{ width: 29, height: 29 }} />
 
                                 <h1 className="font-semibold hidden lg:block">Allan</h1>
@@ -66,10 +67,11 @@ const Navbar = () => {
                         <IconButton>
                             <FavoriteBorder sx={{ fontSize: 29 }} />
                         </IconButton>
-                        <IconButton>
+                        <IconButton onClick={() => navigate("/cart")}>
                             <AddShoppingCart className="text-gray-700" sx={{ fontSize: 29 }} />
                         </IconButton>
-                        {isLarge && <Button startIcon={<Storefront />} variant="outlined">
+                        {isLarge && <Button onClick={() => navigate("/become-seller")}
+                            startIcon={<Storefront />} variant="outlined">
                             Become Seller
                         </Button>}
                     </div>

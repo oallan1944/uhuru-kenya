@@ -125,7 +125,52 @@ export const womenLevelThree = [
         "parentCategoryName": "Lingerie & Sleepwear",
         "parentCategoryId": "women_lingerie_and_sleep_wear"
     },
+    {
+        "name": "Handbags & Bags",
+        "categoryId": "women_handbags_bags",
+        "parentCategoryName": "Handbags,  Bags & Wallets",
+        "parentCategoryId": "women_handbags_bags_and_wallets"
+    },
+    {
+        "name": "Trolleys & Laggages",
+        "categoryId": "women_trolleys_and_laggages",
+        "parentCategoryName": "Handbags,  Bags & Wallets",
+        "parentCategoryId": "women_handbags_bags_and_wallets"
+    },
+    {
+        "name": "Wallets & Pouch",
+        "categoryId": "women_wallets_and_pouch",
+        "parentCategoryName": "Handbags,  Bags & Wallets",
+        "parentCategoryId": "women_handbags_bags_and_wallets"
+    },
+    {
+        "name": "Makeup",
+        "categoryId": "women_makeup",
+        "parentCategoryName": "Beauty & Personal Care",
+        "parentCategoryId": "women_beauty_and_personal_care",
 
+    },
+    {
+        "name": "SkinCare",
+        "categoryId": "women_skincare",
+        "parentCategoryName": "Beauty & Personal Care",
+        "parentCategoryId": "women_beauty_and_personal_care",
+
+    },
+    {
+        "name": "Fashion Jewellery",
+        "categoryId": "women_fashion_jewellery",
+        "parentCategoryName": "Jewellery",
+        "parentCategoryId": "women_jewellery",
+
+    },
+    {
+        "name": "Fine Jewellery",
+        "categoryId": "women_fine_jewellery",
+        "parentCategoryName": "Jewellery",
+        "parentCategoryId": "women_jewellery",
+
+    },
 
 
 ]

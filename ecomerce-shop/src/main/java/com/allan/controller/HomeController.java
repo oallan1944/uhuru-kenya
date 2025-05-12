@@ -8,9 +8,9 @@ import com.allan.response.ApiResponse;
 @RestController
 public class HomeController {
    @GetMapping
-   public ApiResponse HomeControllerHandler(){
-        ApiResponse apiResponse = new ApiResponse();
-        apiResponse.setMessage("Welcome to ecomerce multivendor system");
-        return apiResponse;
-   } 
+   public ApiResponse HomeControllerHandler() {
+      ApiResponse apiResponse = new ApiResponse();
+      apiResponse.setMessage("Welcome to ecomerce multivendor system");
+      return apiResponse;
+   }
 }

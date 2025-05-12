@@ -52,7 +52,7 @@ const Navbar = () => {
                         </IconButton>
 
                         {
-                            true ? <Button onClick={() => navigate("/account/orders")}
+                            false ? <Button onClick={() => navigate("/account/orders")}
                                 className="flex items-center gap-2">
                                 <Avatar sx={{ width: 29, height: 29 }} />
 
@@ -60,7 +60,7 @@ const Navbar = () => {
 
                             </Button>
                                 :
-                                <Button variant="contained">
+                                <Button variant="contained" onClick={() => navigate("/login")}>
                                     Login
                                 </Button>
                         }

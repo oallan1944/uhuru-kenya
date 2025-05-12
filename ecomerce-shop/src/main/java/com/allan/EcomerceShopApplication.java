@@ -12,7 +12,6 @@ public class EcomerceShopApplication {
 		SpringApplication.run(EcomerceShopApplication.class, args);
 
 		// test
-
 	}
 
 }

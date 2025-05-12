@@ -3,24 +3,21 @@ import "./ProductCard.css"
 import { Button } from '@mui/material'
 import { Favorite, ModeComment } from '@mui/icons-material'
 import { teal } from '@mui/material/colors'
+import { Product } from '../../../types/productType'
+import { useNavigate } from 'react-router-dom'
 
-const images = [
-    "https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9",
-    "https://images.unsplash.com/photo-1527719327859-c6ce80353573",
-    "https://images.unsplash.com/photo-1576566588028-4147f3842f27",
-    "https://images.pexels.com/photos/9558699/pexels-photo-9558699.jpeg"
 
-]
 
-const ProductCard = () => {
+const ProductCard = ({ item }: { item: Product }) => {
     const [currentImage, setCurrentImage] = useState(0)
     const [isHovered, setIsHovered] = useState(false);
+    const navigate = useNavigate()
 
     useEffect(() => {
         let interval: any
         if (isHovered) {
             interval = setInterval(() => {
-                setCurrentImage((prevImage) => (prevImage + 1) % images.length);
+                setCurrentImage((prevImage) => (prevImage + 1) % item.images.length);
             }, 2000);
         }
         else if (interval) {
@@ -32,13 +29,16 @@ const ProductCard = () => {
     }, [isHovered])
     return (
         <>
-            <div className='group px-4 relative'>
+            <div onClick={() => navigate(`/product-details/
+            ${item.category?.categoryId}
+            /${item.title}/${item.id}`)}
+                className='group px-4 relative'>
                 <div className='card'
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                 >
 
-                    {images.map((item, index) => <img
+                    {item.images.map((item, index) => <img
                         className='card-media object-top'
 
                         src={item} alt=""
@@ -67,18 +67,18 @@ const ProductCard = () => {
                 <div className='details pt-3 space-y-1 group-hover-effect rounded-md'>
 
                     <div className='name'>
-                        <h1>Polo</h1>
-                        <p>White T-shirt</p>
+                        <h1>{item.seller?.businessDetails.businessName}</h1>
+                        <p>{item.title}</p>
                     </div>
                     <div className='price flex items-center gap-3'>
                         <span className='font-sans text-gray-800'>
-                            $4
+                            ${item.sellingPrice}
                         </span>
                         <span className='thin-line-through text-gray-500'>
-                            $5
+                            ${item.mrpPrice}
                         </span>
                         <span className='text-primary-color font-semibold'>
-                            60%
+                            {item.discountPercent}%
                         </span>
 
 
